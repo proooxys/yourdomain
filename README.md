@@ -37,7 +37,7 @@
  3 - Comandos no linux
 
  execute o comando
- realm join -v sedam.local -U user --computer-ou=OU=Linux-computers
+ realm join -v domain.local -U user --computer-ou=OU=Linux-computers
 
  4 - configurando kerberos 
 
