@@ -75,6 +75,7 @@ account_cache_expiration = 14
 entry_cache_timeout = 14400
 krb5_store_password_if_offline = true
 user_fully_qualified_names = false
+ad_gpo_access_control = permissive
 
 [pam]
 reconnection_retries = 3
