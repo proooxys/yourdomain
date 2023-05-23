@@ -43,6 +43,7 @@
 
  nano /etc/sssd/sssd.conf
 
+```
 [sssd]
 domains = dominio.com
 config_file_version = 2
@@ -86,6 +87,7 @@ offline_credentials_expiration = 3
 filter_groups = root
 filter_users = root
 reconnection_retries = 3
+```
 
 executar comando
 sudo apt install krb5-user adsys libpam-krb5 -y
