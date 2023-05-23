@@ -1,6 +1,5 @@
-# yourdomain
- 
- 1 - Incluir os arquivos do adsys no Active Directory
+
+ ## 1 - Baixar os arquivos do adsys diretamente no repositório do Ubuntu
 
  ### Acesse o repositório do Ubuntu
 ```
@@ -19,16 +18,22 @@
  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.admx
 ```
 
- Criar dois diretórios no Active Directory para a inclusão dos arquivos baixados
+ ## 2 - Criação das políticas no Active Directory
  
- Acesse o diterório no seu Active Directory
+ ### Acesse o diterório no seu Active Directory
+ ```
  C:\Windows\SYSVOL\domain\Policies
+ ```
 
- Crie uma pasta para a inclusão do arquivo Ubuntu.admx
- PolicyDefinitions - nome da pasta para exemplo
+ ### Crie uma pasta para a inclusão do arquivo Ubuntu.admx
+ ```
+ PolicyDefinitions
+ ```
 
- Dentro da pasta criada, crie uma pasta en-US e inclua o arquivo Ubuntu.adml
+ ### Dentro da pasta PolicyDefinitions, crie uma pasta en-US e inclua o arquivo Ubuntu.adml
+ ```
  C:\Windows\SYSVOL\domain\Policies\PolicyDefinitions\en-US\
+ ```
 
  2 - Configurar as políticas
 
