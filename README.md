@@ -24,6 +24,7 @@
  ```
  C:\Windows\SYSVOL\domain\Policies
  ```
+ > Em domain, informe o nome do seu domínio
 
  ### Crie uma pasta para a inclusão do arquivo Ubuntu.admx
  ```
@@ -35,14 +36,13 @@
  C:\Windows\SYSVOL\domain\Policies\PolicyDefinitions\en-US\
  ```
 
- 2 - Configurar as políticas
+ ## 3 - Configurar as políticas
+ Na aba Tools, no servidor que está instalado o Active Directory, acesse a aba Group Policy Manegemant, em seguida crie uma nova unidade organizacional clicando com o botão direito no nome do domínio
 
- A aba Tools, no servidor que está instalado o Active Directory, acesse a aba Group Policy Manegemant
+ Nomeie a unidade com o nome `Linux-computers`
 
- Em seguida crie uma nova unidade organizacional clicando com o botão direito no nome do domínio
- Crie uma pasta como nome Linux-computers
 
- Crie uma GPO clicando com o botao direito na pasta Linux-computers e atribua o nome Ubuntu para a GPO
+ Crie uma GPO dentro da unidade clicando com o botao direito na pasta Linux-computers e atribua o nome Ubuntu para a GPO
  
 
  3 - Comandos no linux
