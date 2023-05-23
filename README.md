@@ -2,12 +2,12 @@
  
  1 - Incluir os arquivos do adsys no Active Directory
 
- #Acesse o repositório do Ubuntu
+ # Acesse o repositório do Ubuntu
 ```
  https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/all
 ```
 
- #Baixe os arquivos necessários
+ # Baixe os arquivos necessários
 
  Ubuntu.adml
 ``` 
