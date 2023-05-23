@@ -1,22 +1,11 @@
 
  ## 1 - Baixar os arquivos do adsys diretamente no repositório do Ubuntu
 
- ### Acesse o repositório do Ubuntu
-```
- https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/all
-```
+ ### Acesse o repositório do Ubuntu e baixxe os arquivos necessários
 
- ### Baixe os arquivos necessários
-
- Arquivo `Ubuntu.adml`
-``` 
- https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.adml
-```
-
- Arquivo `Ubuntu.admx`
-```
- https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.admx
-```
+ * Repositório (https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/all)
+ * Arquivo `Ubuntu.adml` (https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.adml)
+ * Arquivo `Ubuntu.admx` (https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.admx)
 
  ## 2 - Criação das políticas no Active Directory
  
