@@ -128,11 +128,22 @@ Editar arquivo
 nano /etc/pam.d/common-sessions
 
 incluir no final da linha
-session required pam_mkhomedir.so skel=/etc/skel/ umask=877
+session required pam_mkhomedir.so skel=/etc/skel/ umask=077
 
 
 Editar arquivo 
 nano /etc/pam.d/common-account
 
 incluir no final da linha
-session required pam_mkhomedir.so skel=/etc/skel/ umask=8077
+session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
+
+Executar comando
+sudo ua attach
+
+Reiniciar a máquina
+
+
+
+Executar comandos
+systemctl restart realmd sssd
+adsysctl update -m -vv
