@@ -3,9 +3,9 @@
 
  ### Acesse o repositório do Ubuntu e baixxe os arquivos necessários
 
- * Repositório - https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/all
- * Arquivo `Ubuntu.adml` - https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.adml
- * Arquivo `Ubuntu.admx` - https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.admx
+ * Repositório  https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/all
+ * Arquivo `Ubuntu.adml`  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.adml
+ * Arquivo `Ubuntu.admx`  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.admx
 
  ## 2 - Criação das políticas no Active Directory
  
@@ -28,20 +28,19 @@
  ## 3 - Configurar as políticas
  Na aba Tools, no servidor que está instalado o Active Directory, acesse a aba Group Policy Manegemant, em seguida crie uma nova unidade organizacional clicando com o botão direito no nome do domínio
 
- Nomeie a unidade com o nome `Linux-computers`
-
-
- Crie uma GPO dentro da unidade clicando com o botao direito na pasta Linux-computers e atribua o nome Ubuntu para a GPO
+ 1. Nomeie a unidade com o nome `Linux-computers`
+ 2. Crie uma GPO dentro da unidade **Linux-computers** clicando com o botao direito e atribua o nome **Ubuntu** para a GPO
  
 
- 3 - Comandos no linux
+ ## 4 - Execução de comandos no linux
 
- execute o comando
+ ### Adicionando o computador ao 
  realm join -v domain.local -U user --computer-ou=OU=Linux-computers
 
- 4 - configurando kerberos 
 
- nano /etc/sssd/sssd.conf
+ ## 5 - Configurando kerberos 
+
+ Edite o arquivo **/etc/sssd/sssd.conf** e incluia o conteúdo abaixo
 
 ```
 [sssd]
@@ -89,12 +88,14 @@ filter_users = root
 reconnection_retries = 3
 ```
 
-executar comando
+### Execute o seguinte comando
+```
 sudo apt install krb5-user adsys libpam-krb5 -y
+```
 
-editar arquivo
-nano /etc/krb5.conf
+Edite o arquivo **/etc/krb5.conf** e incluia o conteúdo abaixo
 
+```
 [libdefaults]
 default_realm = domain.com
 rdns = false
@@ -110,7 +111,7 @@ udp_preference_limit = 0
 DOMAIN.COM = {
 default_domain = DOMAIN.COM
 }
-
+```
 
 Definir permissão do arquivo
 sudo chmod 0600 /etc/krb5.keytab; chown root:root /etc/krb5.keytab; sudo ua attach token
