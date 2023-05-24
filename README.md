@@ -34,15 +34,16 @@
 
  ## 4 - Execução de comandos no linux
 
- ### Adicionando o computador ao 
+ ### Adicionando o computador
+ ```shell
  realm join -v domain.local -U user --computer-ou=OU=Linux-computers
-
+ ```
 
  ## 5 - Configurando kerberos 
 
  Edite o arquivo **/etc/sssd/sssd.conf** e incluia o conteúdo abaixo
 
-```
+```shell
 [sssd]
 domains = dominio.com
 config_file_version = 2
@@ -89,13 +90,13 @@ reconnection_retries = 3
 ```
 
 ### Execute o seguinte comando
-```
+```shell
 sudo apt install krb5-user adsys libpam-krb5 -y
 ```
 
 Edite o arquivo **/etc/krb5.conf** e incluia o conteúdo abaixo
 
-```
+```shell
 [libdefaults]
 default_realm = domain.com
 rdns = false
