@@ -117,8 +117,10 @@ Definir permissão do arquivo
 sudo chmod 0600 /etc/krb5.keytab; chown root:root /etc/krb5.keytab; sudo ua attach token
 
 
-descomentar linha do arquivo
+### Descomentar linha do arquivo
+```shell
 nano /etc/apparmor.d/tunables/home.d/site.local
+```
 
 Antes
 #{HOMEDIRS}+=/srv/nfs/home/ /mnt/home
@@ -127,18 +129,25 @@ Depois
 {HOMEDIRS}+=/home/domain.com/ /home/
 
 
-Editar arquivo
+### Editar arquivo common-session
+```shell
 nano /etc/pam.d/common-session
+```
 
-incluir no final da linha
+### incluir no final da linha
+```shell
 session required pam_mkhomedir.so skel=/etc/skel/ umask=077
+```
 
-
-Editar arquivo 
+### Editar arquivo common-account
+```shell
 nano /etc/pam.d/common-account
+```
 
-incluir no final da linha
+### incluir no final da linha
+```shell
 session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
+```
 
 Executar comando
 sudo ua attach
