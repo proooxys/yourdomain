@@ -3,9 +3,9 @@
 
  ### Acesse o repositório do Ubuntu e baixxe os arquivos necessários
 
- * Repositório  https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/all
- * Arquivo `Ubuntu.adml`  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.adml
- * Arquivo `Ubuntu.admx`  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/all/Ubuntu.admx
+ * Repositório  https://github.com/ubuntu/adsys/tree/main/policies/Ubuntu/lts-only
+ * Arquivo `Ubuntu.adml`  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/lts-only/Ubuntu.adml
+ * Arquivo `Ubuntu.admx`  https://github.com/ubuntu/adsys/blob/main/policies/Ubuntu/lts-only/Ubuntu.admx
 
  ## 2 - Criação das políticas no Active Directory
  
@@ -13,11 +13,10 @@
  ```
  C:\Windows\SYSVOL\domain\Policies
  ```
- > Em domain, informe o nome do seu domínio
 
  ### Crie uma pasta para a inclusão do arquivo Ubuntu.admx
  ```
- PolicyDefinitions
+ PolicyDefinitionsUbuntu
  ```
 
  ### Dentro da pasta PolicyDefinitions, crie uma pasta en-US e inclua o arquivo Ubuntu.adml
@@ -26,7 +25,7 @@
  ```
 
  ## 3 - Configurar as políticas
- Na aba Tools, no servidor que está instalado o Active Directory, acesse a aba Group Policy Manegemant, em seguida crie uma nova unidade organizacional clicando com o botão direito no nome do domínio
+ Na aba Tools, no servidor que está instalado o Active Directory, acesse a aba Group Policy Management, em seguida crie uma nova unidade organizacional clicando com o botão direito no nome do domínio
 
  1. Nomeie a unidade com o nome `Linux-computers`
  2. Crie uma GPO dentro da unidade **Linux-computers** clicando com o botao direito e atribua o nome **Ubuntu** para a GPO
@@ -45,7 +44,7 @@
 
 ```shell
 [sssd]
-domains = dominio.com
+domains = domain.com
 config_file_version = 2
 services = nss, pam
 default_domain_suffix = domain.com
@@ -129,7 +128,7 @@ Depois
 
 
 Editar arquivo
-nano /etc/pam.d/common-sessions
+nano /etc/pam.d/common-session
 
 incluir no final da linha
 session required pam_mkhomedir.so skel=/etc/skel/ umask=077
