@@ -11,18 +11,19 @@ echo " [+] - 1. Executar instalação e configuração inicial"
 echo " [+] - 2. Sair do programa!"
 
 echo "Selecione uma opção..."
-    read resp
+    read -p -n 1 resp
     case $resp in
 
     1) # Opção [1] - Executar instalação e configuração inicial
 
         # Instalando pacotes necessários
         echo -e "[=] - Instalando pacotes..."
-            sudo apt install install sssd-ad sssd-tools realmd adcli -y
+            sudo apt install sssd-ad sssd-tools realmd adcli -y
 
         # Verificando detecção do AD via DNS
         echo -e "[=] - Verificando se o domínio é detectado via DNS."
-            read AdDiscover
+            echo -e "Digite o domínio:"
+            read -p AdDiscover
             realm -v discover $AdDiscover
 
         # Ingressando no domínio
@@ -30,7 +31,7 @@ echo "Selecione uma opção..."
         echo
         echo -e "Obs: Deve ser inserido inicialmente um usuário com permisão de administrador do domínio"
         echo -e "[=] - Digite o nome de usuário:"
-        read usuario
+        read -p usuario
         echo -e "[=] - Digite o nome de domínio:"
             read dominio
             realm join -U $usuario $dominio -v
